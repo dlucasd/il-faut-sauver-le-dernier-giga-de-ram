@@ -1,0 +1,97 @@
+= Il faut sauver le dernier giga de RAM
+
+== Présentation du contexte projet dans lequel nous sommes intervenus
+
+* on fait du courrier
+* vieux projet qui a grossit petit à petit, perte de connaissance fonctionnelle
+* joli schéma de la chaîne
+* chaque année, forte volumétrie en fin d'année
+* l'année dernière, consommation mémoire 96go atteinte
+
+* attend c'est pas normal! 96Go ?
+* schéma plus exhaustif avec les progiciels, la parallélisation de la chaîne etc ...
+
+* problématique : cette année, plus de volumétrie et le client nous confie que la chaîne consomme de plus en plus de RAM
+* client pas confiant pour les traitements de fin d'année
+
+== Démarche que nous avons adoptée pour identifier les composants consommateurs
+
+état des lieux :
+* a-t-on des tests de perf ? ou env de perf ? Non
+* est-ce qu'on a des metrics sur les composants ? Non
+* a-t-on accès à la prod pour voir les logs ? Non
+* a-t-on une intuition sur les composants consommateurs ? Oui, plusieurs dizaines
+
+fake conversation teams au client : et au fait ? on a combien de temps ? 3 semaines!
+
+ok ça va être chaud, comment s'y prendre ?
+
+* pas le temps de mettre en place des tirs de perf (environnement à dispo sous taillé, process administratif lourd pour en mettre en place)
+* pas le temps de mettre en place de l'observabilité (utilisation d'un ordonnanceur qui ne facilite pas la tâche, les logs sont éparpillées, pas de correlation id)
+** disclaimer : on n'a pas de metrics réelles mais des tendances
+
+* demander un gros flux qui passent pas sur nos environnements de recette ni en local
+* on set le Xmx à 8go sur tous les composants
+* on extrapole les résultats
+
+== Récolte de metrics avec les profilers Java Flight Recorder et Async – 5 minutes
+
+* démo : on passe le flux : ça plante
+* comment on analyse ça ?
+
+* petit cours théorique sur le profiling JFR/Async
+
+== Stream "module tri des courriers"
+
+* abus des opérations terminales dans les Stream
+* exemple avec stream, collectors, count => on renvoi des Stream plutôt que des List
+
+== Instanciations inutiles "module chiffrement des données"
+
+* profiling intellij => dump mémoire en hprof => utilisation de JMC (bof à l'utilisation) => je connais un truc mieux Eclipse Memory Analyzer
+* Constantes : regexp / datetimeformatter
+* Map sheetnames où on utilise finalement que 3 données sur 300
+
+== Fin de la première semaine
+
+* compteur jours / giga de ram
+* récap des actions et gains
+
+== "module reporting"
+
+* présentation du module : reporting sur les courriers depuis la base de données
+* stream renvoyé par le repo => ça ne fonctionne pas à cause des relations
+* hibernate show sql => beaucoup trop de requêtes
+* mise en place de pg_statements => beaucoup trop de relations sur l'entité courrier
+* on a qu'à mettre du LAZY !
+* pas possible ça peut faire péter la chaîne, y'a déjà eu un fix : fake historique git sur le LAZY / EAGER des relations de l'entité courrier
+* projection => on en a déjà sur le projet, regarde => ok mais ça ne fonctionne pas à cause des relations
+
+== Fin de la seconde semaine
+
+* compteur jours / giga de ram
+* pas de gains
+
+== "module reporting"
+
+* bon, on fork courrier
+* on regarde le résultat => beaucoup de requêtes identiques
+* mise en place de cache => attention, cycle de vie du composant / TTL ...
+* on regarde le résultat => des requêtes s'exécutent avant même le lancement du composant
+* hypersistence-utils => ok, requêtes à l'init de certains composants dans un jar core
+
+== Fin de la troisième semaine
+
+* compteur jours / giga de ram
+* récap des actions et gains
+    
+== Conclusion et questions
+
+* moins de GC == moins de temps
+
+* piste d'amélio :
+** observabilité
+** test de perf
+
+
+
