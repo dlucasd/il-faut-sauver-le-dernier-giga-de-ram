@@ -1,0 +1,65 @@
+[%notitle]
+== Introduction et présentation
+
+image::images/ram.jpg[background, size=fill]
+
+[.notes]
+--
+* pourquoi ce talk ?
+* à la conception, on ne se soucie généralement pas de la consommation mémoire
+* le coût de la RAM a baissé, et l'air du cloud et des ressources illimitées n'ont rien arrangé
+* retour d'expérience sur des optimisations de consommation mémoire que nous avons effectuées il y a quelques mois
+--
+
+[%notitle.%auto-animate.columns.is-vcentered.transparency]
+=== Présentation
+
+image::images/sod2024_2.jpg[background, size=fill]
+
+
+[.column.has-text-right.is-two-fifth]
+****
+
+[.important-text]
+--
+*Damien Lucas*
+
+Tech Lead
+
+Architecte
+--
+
+[.vertical-align-middle]
+icon:github[] @dlucasd
+
+****
+
+[.column]
+--
+image::images/dlucas.png[]
+--
+
+[%notitle.%auto-animate.columns.is-vcentered.transparency]
+=== Présentation
+
+image::images/sod2024_2.jpg[background, size=fill]
+
+[.column.has-text-right.is-two-fifth]
+****
+
+[.important-text]
+--
+*Ivan Béthus*
+
+Tech Lead
+--
+
+
+[.vertical-align-middle]
+icon:github[] @ibethus
+****
+
+[.column]
+--
+image::images/ibethus.png[]
+--

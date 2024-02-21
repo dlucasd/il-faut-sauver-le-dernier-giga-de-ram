@@ -1,0 +1,21 @@
+= Il faut sauver le dernier giga de RAM
+:docinfo: private
+:source-highlighter: highlight.js
+:autofit-option:
+:icons: font
+:revealjs_theme: white
+:revealjs_slideNumber: true
+:revealjs_history: true
+:revealjs_pdfseparatefragments: false
+:title-slide-background-image: images/soldat_ryan.jpg
+:title-slide-background-size: fill
+:title-slide-filter: blur(4px)
+:customcss: css/meetup.css
+
+
+include::intro.adoc[]
+include::contexte_projet.adoc[]
+include::demarche.adoc[]
+include::trame.adoc[]
+
+

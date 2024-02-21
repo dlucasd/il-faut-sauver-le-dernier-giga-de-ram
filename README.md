@@ -1,6 +1,19 @@
 # Il faut sauver le dernier giga de RAM
 
-## Abstract
+## Générer les slides en local
+
+1. Télécharger reveal.js et le dézipper à la racine du projet : https://github.com/hakimel/reveal.js/archive/master.zip
+
+
+2. Lancer les commandes suivantes :
+```
+docker container run --rm -ti -u $(id -u):$(id -g) -v $(pwd):/documents asciidoctor/docker-asciidoctor:1.65 bash
+asciidoctor-revealjs index.adoc
+```
+
+3. Ouvrir le fichier index.html généré.
+
+## Résumé
 
 A l'approche des fortes volumétries de fin d'année, notre client ne peut plus se permettre d'ajouter à nouveau de la RAM sur son environnement de prod. Avec 96Go déjà en place sur le serveur, ça peut se comprendre !
 

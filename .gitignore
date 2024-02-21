@@ -1,1 +1,4 @@
 .vscode
+.idea
+reveal.js**
+index.html
