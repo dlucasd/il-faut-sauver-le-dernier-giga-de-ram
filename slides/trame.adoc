@@ -26,17 +26,24 @@
 === "module reporting"
 
 * présentation du module : reporting sur les courriers depuis la base de données
-* stream renvoyé par le repo => ça ne fonctionne pas à cause des relations
-* hibernate show sql => beaucoup trop de requêtes
-* mise en place de pg_statements => beaucoup trop de relations sur l'entité courrier
+* explication du code et lancement avec le Profiling => beaucoup de données et c'est long .... 
+* hibernate show sql => beaucoup trop de requêtes sur les relations, alors qu'on n'utilise même pas les données!
 * on a qu'à mettre du LAZY !
 * pas possible ça peut faire péter la chaîne, y'a déjà eu un fix : fake historique git sur le LAZY / EAGER des relations de l'entité courrier
+* ok, donc on ne peut pas non plus mettre de Fetch.Subselect dans l'entité courrier
+* on ajoute donc des FETCH dans les relations de la @Query => MultipleBagFetchException => il faut remplacer les List par des Set dans l'entité courrier => impossible d'y toucher
+* 
+
+* stream renvoyé par le repo => ça ne fonctionne pas à cause des relations type List : il faut les passer en Set.
+* cf https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html#repositories.scrolling.guidance
+* mise en place de pg_statements => beaucoup trop de relations sur l'entité courrier
 * projection => on en a déjà sur le projet, regarde => ok mais ça ne fonctionne pas à cause des relations
 
 === Fin de la seconde semaine
 
 * compteur jours / giga de ram
 * pas de gains
+* Récap
 
 === "module reporting"
 
@@ -59,5 +66,6 @@
 ** observabilité
 ** test de perf
 
-
+// prénom Wilson / Forrest Gump / Sully
+// Da Vinci Code
 

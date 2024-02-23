@@ -55,6 +55,20 @@ body::after {
     opacity: 0.20;
 }
 
+.reveal .progress {
+    height: 9px;
+    color: #549456;
+}
+
+img {
+    border-radius: 35px;
+}
+
+.sidebarblock.column.terminal {
+    width: 95%;
+    margin: -50px;
+}
+
 /*
 .reveal ul {
     list-style-type: none;

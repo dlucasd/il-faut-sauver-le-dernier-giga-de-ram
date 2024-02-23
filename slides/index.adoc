@@ -13,9 +13,10 @@
 :customcss: css/meetup.css
 
 
-include::intro.adoc[]
-include::contexte_projet.adoc[]
-include::demarche.adoc[]
-include::trame.adoc[]
+include::01_intro.adoc[]
+include::02_contexte_projet.adoc[]
+include::03_demarche.adoc[]
+include::04_recap_semaine.adoc[]
+include::05_conclusion.adoc[]
 
 

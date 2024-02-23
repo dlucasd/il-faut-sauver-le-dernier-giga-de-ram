@@ -1,0 +1,35 @@
+[%notitle]
+== Récap semaine
+
+[%notitle]
+=== Semaine 1
+
+image::images/recap_semaine.png[background, size=contain]
+
+[%notitle]
+=== Semaine 2
+
+image::images/recap_semaine.png[background, size=contain]
+
+[%notitle]
+=== Semaine 3
+
+image::images/recap_semaine.png[background, size=contain]
+
+[%notitle.columns.is-vcentered]
+=== pg_stat_statements
+
+[.column.is-one-fifth]
+image::images/terminal.png[width=50%]
+
+[.column.terminal]
+****
+[source, bash]
+----
+sudo vi /etc/postgresql/13/data/postgresql.conf
+shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
+sudo systemctl restart postgresql-13
+psql -U postgres -c "create extension pg_stat_statements;"
+psql -U postgres -c "select pg_stat_statements_reset()"
+----
+****
