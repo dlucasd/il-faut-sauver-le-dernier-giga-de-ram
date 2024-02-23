@@ -23,8 +23,8 @@ public class ReportingRunner {
 	@Transactional(readOnly = true)
 	public void process() {
 		System.out.println("Processing...");
-		//		List<Courrier> courriers = courrierRepository.findAll();
-		//		writeCSV(courriers);
+//				List<Courrier> courriers = courrierRepository.findAllByCustomQueryAndList();
+//				writeCSV(courriers);
 		try (Stream<Courrier> courriers = courrierRepository.findAllByCustomQueryAndStream()) {
 			writeCSV(courriers);
 		}

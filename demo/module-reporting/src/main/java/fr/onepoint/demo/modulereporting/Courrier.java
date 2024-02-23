@@ -1,7 +1,12 @@
 package fr.onepoint.demo.modulereporting;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Courrier {
@@ -14,6 +19,10 @@ public class Courrier {
 	private String destinataire;
 	private String expediteur;
 	private String contenu;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+	private Set<Adresse> adresses;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+	private Set<Personne> personnes;
 
 	@Override
 	public String toString() {
