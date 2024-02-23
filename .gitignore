@@ -2,3 +2,5 @@
 .idea
 reveal.js**
 index.html
+
+**/src/test/resources/init_fat.sql

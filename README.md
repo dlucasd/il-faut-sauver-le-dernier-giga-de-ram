@@ -2,13 +2,13 @@
 
 ## Générer les slides en local
 
-1. Télécharger reveal.js et le dézipper à la racine du projet : https://github.com/hakimel/reveal.js/archive/master.zip
+1. Télécharger `reveal.js`, le dézipper dans le répertoire `slides` et nommer le répertoire `reveal.js` : https://github.com/hakimel/reveal.js/archive/master.zip
 
 
 2. Lancer les commandes suivantes :
 ```
 docker container run --rm -ti -u $(id -u):$(id -g) -v $(pwd):/documents asciidoctor/docker-asciidoctor:1.65 bash
-asciidoctor-revealjs index.adoc
+asciidoctor-revealjs slides/index.adoc
 ```
 
 3. Ouvrir le fichier index.html généré.

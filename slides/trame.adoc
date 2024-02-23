@@ -26,7 +26,8 @@
 === "module reporting"
 
 * présentation du module : reporting sur les courriers depuis la base de données
-* stream renvoyé par le repo => ça ne fonctionne pas à cause des relations
+* stream renvoyé par le repo => ça ne fonctionne pas à cause des relations. NB : Page & Slice
+* cf https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html#repositories.scrolling.guidance
 * hibernate show sql => beaucoup trop de requêtes
 * mise en place de pg_statements => beaucoup trop de relations sur l'entité courrier
 * on a qu'à mettre du LAZY !
