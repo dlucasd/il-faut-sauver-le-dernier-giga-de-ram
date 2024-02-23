@@ -7,7 +7,7 @@ image::images/ram.jpg[background, size=fill]
 --
 * pourquoi ce talk ?
 * à la conception, on ne se soucie généralement pas de la consommation mémoire
-* le coût de la RAM a baissé, et l'air du cloud et des ressources illimitées n'ont rien arrangé
+* le coût de la RAM a baissé, et l'ère du cloud et des ressources illimitées n'ont rien arrangé
 * retour d'expérience sur des optimisations de consommation mémoire que nous avons effectuées il y a quelques mois
 --
 
@@ -51,7 +51,7 @@ image::images/sod2024_2.jpg[background, size=fill]
 --
 *Ivan Béthus*
 
-Tech Lead
+Dev backend
 --
 
 

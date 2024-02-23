@@ -1,4 +1,5 @@
 
+
 == Démarche que nous avons adoptée pour identifier les composants consommateurs
 
 [.notes]
