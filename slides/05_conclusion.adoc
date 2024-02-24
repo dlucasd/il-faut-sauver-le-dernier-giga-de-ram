@@ -1,0 +1,10 @@
+== Conclusion
+
+[%notitle.columns.is-vcentered]
+=== Merci
+
+[.column]
+image::images/thanks.png[width=50%]
+
+[.column.has-text-left]
+T.HANKS

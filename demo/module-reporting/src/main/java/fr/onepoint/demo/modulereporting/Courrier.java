@@ -6,7 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Courrier {
@@ -20,9 +19,9 @@ public class Courrier {
 	private String expediteur;
 	private String contenu;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
-	private Set<Adresse> adresses;
+	private List<Adresse> adresses;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
-	private Set<Personne> personnes;
+	private List<Personne> personnes;
 
 	@Override
 	public String toString() {

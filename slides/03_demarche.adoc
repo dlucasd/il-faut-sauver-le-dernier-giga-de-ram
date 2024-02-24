@@ -9,9 +9,9 @@
 * a-t-on accès à la prod pour voir les logs ? Non
 * a-t-on une intuition sur les composants consommateurs ? Oui, plusieurs dizaines
 
-fake conversation teams au client : et au fait ? on a combien de temps ? 3 semaines!
+* fake conversation teams au client : et au fait ? on a combien de temps ? 3 semaines!
 
-ok ça va être chaud, comment s'y prendre ?
+* ok ça va être chaud, comment s'y prendre ?
 
 * pas le temps de mettre en place des tirs de perf (environnement à dispo sous taillé, process administratif lourd pour en mettre en place)
 * pas le temps de mettre en place de l'observabilité (utilisation d'un ordonnanceur qui ne facilite pas la tâche, les logs sont éparpillées, pas de correlation id)
