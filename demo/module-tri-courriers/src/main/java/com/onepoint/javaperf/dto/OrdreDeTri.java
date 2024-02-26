@@ -5,6 +5,7 @@ import com.onepoint.javaperf.entity.LotPostal;
 
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class OrdreDeTri {
 
@@ -20,6 +21,15 @@ public class OrdreDeTri {
 		return this.lotPostal.getCourriers().stream()
 		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches())
 		                     .toList();
+	}
+	public Stream<Courrier> getCourriersAsStream() {
+		return this.lotPostal.getCourriers().stream()
+		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches());
+	}
+
+	public Stream<Courrier> getCourriersAsParallelStream() {
+		return this.lotPostal.getCourriers().parallelStream()
+		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches());
 	}
 
 }

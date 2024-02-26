@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class LotPostal {
@@ -14,13 +16,14 @@ public class LotPostal {
 	private int id;
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "lotPostal")
-	private Set<Courrier> courriers;
+	@Fetch(FetchMode.SUBSELECT)
+	private List<Courrier> courriers;
 
 	public int getId() {
 		return id;
 	}
 
-	public Set<Courrier> getCourriers() {
+	public List<Courrier> getCourriers() {
 		return courriers;
 	}
 

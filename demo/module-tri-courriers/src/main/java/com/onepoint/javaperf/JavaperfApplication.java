@@ -10,7 +10,7 @@ public class JavaperfApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(JavaperfApplication.class, args);
-		ctx.getBean(CatchMeIfYouCan.class).run();
+		ctx.getBean(CatchMeIfYouCan.class).runForestRun();
 	}
 
 }
