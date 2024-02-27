@@ -26,7 +26,6 @@ public class OrdreDeTri {
 		return this.lotPostal.getCourriers().stream()
 		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches());
 	}
-
 	public Stream<Courrier> getCourriersAsParallelStream() {
 		return this.lotPostal.getCourriers().parallelStream()
 		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches());

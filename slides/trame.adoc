@@ -4,7 +4,6 @@
 
 * démo : on passe le flux : ça plante
 * comment on analyse ça ?
-
 * petit cours théorique sur le profiling JFR/Async
 
 === Stream "module tri des courriers"

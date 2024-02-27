@@ -51,7 +51,7 @@ image::images/sod2024_2.jpg[background, size=fill]
 --
 *Ivan Béthus*
 
-Tech Lead
+Dev backend
 --
 
 
