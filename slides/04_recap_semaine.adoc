@@ -6,10 +6,37 @@
 
 image::images/recap_semaine.png[background, size=contain]
 
+[%auto-animate.columns.is-vcentered]
+=== Semaine 1
+[.vertical-align-middle]
+Les listes, c'est bien...
+
+[%auto-animate.columns.is-vcentered]
+=== Semaine 1
+[.vertical-align-middle]
+...les stream, c'est mieux !
+
+
+
 [%notitle]
 === Semaine 2
 
 image::images/recap_semaine.png[background, size=contain]
+
+[%auto-animate.columns.is-vcentered]
+=== Semaine 2
+.Générer un dump mémoire
+[.column.terminal]
+****
+[source, bash]
+----
+jmap -dump:[live],format=b,file=<file-path> <pid>
+
+jcmd <pid> GC.heap_dump <file-path>
+
+java -XX:+HeapDumpOnOutOfMemoryError #optionel : -Xmx1g
+----
+****
 
 [%notitle]
 === Semaine 3
