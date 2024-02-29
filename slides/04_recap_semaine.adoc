@@ -8,15 +8,24 @@ image::images/recap_semaine.png[background, size=contain]
 
 [%auto-animate.columns.is-vcentered]
 === Semaine 1
-[.vertical-align-middle]
+[.column]
 Les listes, c'est bien...
+[.column]
+image::images/leonardo.png[size=contain]
 
 [%auto-animate.columns.is-vcentered]
 === Semaine 1
-[.vertical-align-middle]
-...les stream, c'est mieux !
+[.column]
+image::images/tom.png[size=contain]
+[.column]
+...les stream, c'est mieux ! (enfin, parfois)
 
-
+[.notes]
+--
+* Liste = simple, connu, attention au collector et aux très grandes collections
+* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
+* À ne consommer qu'à bon escient !
+--
 
 [%notitle]
 === Semaine 2
