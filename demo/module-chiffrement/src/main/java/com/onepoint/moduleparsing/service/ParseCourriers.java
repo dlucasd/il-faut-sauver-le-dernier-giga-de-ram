@@ -1,7 +1,7 @@
-package com.onepoint.modulechiffrement.service;
+package com.onepoint.moduleparsing.service;
 
-import com.onepoint.modulechiffrement.dto.Courrier;
-import com.onepoint.modulechiffrement.dto.CourrierMapper;
+import com.onepoint.moduleparsing.dto.Courrier;
+import com.onepoint.moduleparsing.dto.CourrierMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

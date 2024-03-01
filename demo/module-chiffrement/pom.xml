@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.onepoint</groupId>
-    <artifactId>module-chiffrement</artifactId>
+    <artifactId>module-parsing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>module-chiffrement</name>
-    <description>module-chiffrement</description>
+    <name>module-parsing</name>
+    <description>module-parsing</description>
     <properties>
         <java.version>21</java.version>
     </properties>

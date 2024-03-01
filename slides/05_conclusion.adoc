@@ -1,4 +1,6 @@
-== Conclusion
+[.columns.is-vcentered]
+== _To be continued..._
+image::images/fin.png[width=100%]
 
 [%notitle.columns.is-vcentered]
 === Merci

@@ -1,38 +1,56 @@
-[%notitle]
-== Récap semaine
 
-[%notitle]
+[.text-is-centered]
+== Semaine 1
+image::images/semaine1.png[width=100%]
+
+[.notes]
+--
+> Lancer le module de parsing des données
+
+* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
+* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées -> stacktrace (On voit la prédominance de `SimpleDateFormat` et des insertions dans la hashmap)
+* Optimisation du code et relance pour comparer
+--
+
+[%notitle.columns.is-vcentered]
 === Semaine 1
-
 image::images/recap_semaine.png[background, size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[.notes]
+--
+* Liste = simple, connu, attention au collector et aux très grandes collections
+* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
+* À ne "consommer" qu'à bon escient !
+--
+
+[%notitle.columns.is-vcentered]
 === Semaine 1
 [.column]
 Les listes, c'est bien...
 [.column]
 image::images/leonardo.png[size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[%notitle.columns.is-vcentered]
 === Semaine 1
 [.column]
 image::images/tom.png[size=contain]
 [.column]
 ...les stream, c'est mieux ! (enfin, parfois)
 
+[.text-is-centered]
+=== Semaine 2
+image::images/semaine2.png[width=100%]
+
 [.notes]
 --
-* Liste = simple, connu, attention au collector et aux très grandes collections
-* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
-* À ne consommer qu'à bon escient !
+a compléter
 --
 
-[%notitle]
+[%notitle.columns.is-vcentered]
 === Semaine 2
-
 image::images/recap_semaine.png[background, size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[%notitle.columns.is-vcentered]
 === Semaine 2
 .Générer un dump mémoire
 [.column.terminal]
@@ -47,9 +65,12 @@ java -XX:+HeapDumpOnOutOfMemoryError #optionel : -Xmx1g
 ----
 ****
 
-[%notitle]
+[.text-is-centered]
 === Semaine 3
+image::images/semaine3.png[width=100%]
 
+[%notitle.columns.is-vcentered]
+=== Semaine 3
 image::images/recap_semaine.png[background, size=contain]
 
 [%notitle.columns.is-vcentered]

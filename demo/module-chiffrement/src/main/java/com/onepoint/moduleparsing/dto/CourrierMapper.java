@@ -1,4 +1,4 @@
-package com.onepoint.modulechiffrement.dto;
+package com.onepoint.moduleparsing.dto;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,7 +23,7 @@ public class CourrierMapper {
 	public Courrier mapLineToDto(String line) {
 		String[] fields = line.split(SEMICOLON);
 		Map<Integer, String> metadata = new HashMap<>();
-		for (int i = START_METADATA_INDEX; i <= 12; i++) {
+		for (int i = START_METADATA_INDEX; i <= END_METADATA_INDEX; i++) {
 			metadata.put(i, fields[i]);
 		}
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("ddMMyyyy");
