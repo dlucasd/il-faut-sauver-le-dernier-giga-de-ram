@@ -1,19 +1,22 @@
 [%notitle]
 == Récap semaine
 
-[%notitle]
+[.text-is-centered]
 === Semaine 1
+Livraison j-15
 
+[%notitle.columns.is-vcentered]
+=== Semaine 1
 image::images/recap_semaine.png[background, size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[%notitle.columns.is-vcentered]
 === Semaine 1
 [.column]
 Les listes, c'est bien...
 [.column]
 image::images/leonardo.png[size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[%notitle.columns.is-vcentered]
 === Semaine 1
 [.column]
 image::images/tom.png[size=contain]
@@ -27,12 +30,15 @@ image::images/tom.png[size=contain]
 * À ne consommer qu'à bon escient !
 --
 
-[%notitle]
+[.text-is-centered]
 === Semaine 2
+Livraison j-10
 
+[%notitle.columns.is-vcentered]
+=== Semaine 2
 image::images/recap_semaine.png[background, size=contain]
 
-[%auto-animate.columns.is-vcentered]
+[%notitle.columns.is-vcentered]
 === Semaine 2
 .Générer un dump mémoire
 [.column.terminal]
@@ -47,9 +53,12 @@ java -XX:+HeapDumpOnOutOfMemoryError #optionel : -Xmx1g
 ----
 ****
 
-[%notitle]
+[.text-is-centered]
 === Semaine 3
+Livraison j-5
 
+[%notitle.columns.is-vcentered]
+=== Semaine 3
 image::images/recap_semaine.png[background, size=contain]
 
 [%notitle.columns.is-vcentered]
