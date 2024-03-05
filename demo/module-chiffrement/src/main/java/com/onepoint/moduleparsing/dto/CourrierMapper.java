@@ -1,4 +1,4 @@
-package com.onepoint.modulechiffrement.dto;
+package com.onepoint.moduleparsing.dto;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

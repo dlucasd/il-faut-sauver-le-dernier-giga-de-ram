@@ -1,6 +1,5 @@
-package com.onepoint.modulechiffrement.dto;
+package com.onepoint.moduleparsing.dto;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Courrier {

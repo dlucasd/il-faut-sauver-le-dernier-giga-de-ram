@@ -1,6 +1,6 @@
-package com.onepoint.modulechiffrement;
+package com.onepoint.moduleparsing;
 
-import com.onepoint.modulechiffrement.service.ParseCourriers;
+import com.onepoint.moduleparsing.service.ParseCourriers;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

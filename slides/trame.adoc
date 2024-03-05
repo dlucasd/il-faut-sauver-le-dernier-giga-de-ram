@@ -11,11 +11,6 @@
 * abus des opérations terminales dans les Stream
 * exemple avec stream, collectors, count => on renvoi des Stream plutôt que des List
 
-==== Mode opératoire
-* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
-* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées (On voit la prédominance de `SimpleDateFormat`)
-* Optimisation du code et relance pour comparer 
-
 === Instanciations inutiles "module chiffrement des données"
 
 * profiling intellij => dump mémoire en hprof => utilisation de JMC (bof à l'utilisation) => je connais un truc mieux Eclipse Memory Analyzer

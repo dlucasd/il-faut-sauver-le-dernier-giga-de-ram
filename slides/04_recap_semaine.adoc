@@ -1,13 +1,35 @@
-[%notitle]
-== Récap semaine
+[%notitle.columns.is-vcentered]
+== Demarche
+[.column]
+_"Vous avez 3 semaines !"_
+
+[.column]
+image::images/run.png[width=100%]
+
 
 [.text-is-centered]
 === Semaine 1
 Livraison j-15
 
+[.notes]
+--
+> Lancer le module de parsing des données
+
+* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
+* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées -> stacktrace (On voit la prédominance de `SimpleDateFormat` et des insertions dans la hashmap)
+* Optimisation du code et relance pour comparer
+--
+
 [%notitle.columns.is-vcentered]
 === Semaine 1
 image::images/recap_semaine.png[background, size=contain]
+
+[.notes]
+--
+* Liste = simple, connu, attention au collector et aux très grandes collections
+* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
+* À ne "consommer" qu'à bon escient !
+--
 
 [%notitle.columns.is-vcentered]
 === Semaine 1
@@ -23,16 +45,14 @@ image::images/tom.png[size=contain]
 [.column]
 ...les stream, c'est mieux ! (enfin, parfois)
 
-[.notes]
---
-* Liste = simple, connu, attention au collector et aux très grandes collections
-* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
-* À ne consommer qu'à bon escient !
---
-
 [.text-is-centered]
 === Semaine 2
 Livraison j-10
+
+[.notes]
+--
+a compléter
+--
 
 [%notitle.columns.is-vcentered]
 === Semaine 2
