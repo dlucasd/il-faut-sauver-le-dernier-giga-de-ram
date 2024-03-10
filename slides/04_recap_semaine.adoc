@@ -1,49 +1,26 @@
 
 [.text-is-centered]
 == Semaine 1
-image::images/semaine1.png[width=100%]
-
-[.notes]
---
-> Lancer le module de parsing des données
-
-* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
-* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées -> stacktrace (On voit la prédominance de `SimpleDateFormat` et des insertions dans la hashmap)
-* Optimisation du code et relance pour comparer
---
+image::images/semaine1.png[width=80%]
 
 [%notitle.columns.is-vcentered]
 === Semaine 1
 image::images/recap_semaine.png[background, size=contain]
 
-[.notes]
---
-* Liste = simple, connu, attention au collector et aux très grandes collections
-* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
-* À ne "consommer" qu'à bon escient !
---
-
-[%notitle.columns.is-vcentered]
-=== Semaine 1
-[.column]
-Les listes, c'est bien...
-[.column]
-image::images/leonardo.png[size=contain]
-
-[%notitle.columns.is-vcentered]
-=== Semaine 1
-[.column]
-image::images/tom.png[size=contain]
-[.column]
-...les stream, c'est mieux ! (enfin, parfois)
-
 [.text-is-centered]
 === Semaine 2
-image::images/semaine2.png[width=100%]
+image::images/semaine2.png[width=80%]
 
 [.notes]
 --
-a compléter
+> Parsing données :
+
+* Phase 1 : explication heap dump avec memory analyser + demo sur les métadonnées (xmx 3Go)
+
+* Phase 2:
+* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
+* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées -> stacktrace (On voit la prédominance de `SimpleDateFormat` et du java.util.Date)
+* Optimisation du code et relance pour comparer
 --
 
 [%notitle.columns.is-vcentered]
@@ -53,7 +30,7 @@ image::images/recap_semaine.png[background, size=contain]
 [%notitle.columns.is-vcentered]
 === Semaine 2
 .Générer un dump mémoire
-[.column.terminal]
+[.column]
 ****
 [source, bash]
 ----
@@ -65,9 +42,41 @@ java -XX:+HeapDumpOnOutOfMemoryError #optionel : -Xmx1g
 ----
 ****
 
+[%notitle.columns.is-vcentered]
+=== Semaine 2
+[.column]
+Les listes, c'est bien...
+[.column]
+image::images/leonardo.png[size=contain]
+
+[%notitle.columns.is-vcentered]
+=== Semaine 2
+[.column]
+image::images/tom.png[size=contain]
+[.column]
+...les stream, c'est mieux ! (enfin, parfois)
+
+[%notitle.columns.is-vcentered]
+=== Semaine 2
+.Lancer JFR
+[.column]
+****
+[source, bash]
+----
+java -XX:StartFlightRecording=duration=200s
+----
+****
+
+[.notes]
+--
+* Liste = simple, connu, attention au collector et aux très grandes collections
+* Stream = rapide (multithread mais attention à la ram), pratique (filtres, etc)
+* À ne "consommer" qu'à bon escient !
+--
+
 [.text-is-centered]
 === Semaine 3
-image::images/semaine3.png[width=100%]
+image::images/semaine3.png[width=80%]
 
 [%notitle.columns.is-vcentered]
 === Semaine 3
@@ -90,3 +99,6 @@ psql -U postgres -c "create extension pg_stat_statements;"
 psql -U postgres -c "select pg_stat_statements_reset()"
 ----
 ****
+
+=== Livraison
+image::images/fin.png[width=100%]

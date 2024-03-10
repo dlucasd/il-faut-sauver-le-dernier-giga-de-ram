@@ -18,15 +18,8 @@ public class Courrier {
 	private String destinataire;
 	private String expediteur;
 	private String contenu;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "courrier")
 	private List<Adresse> adresses;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "id")
-	private List<Personne> personnes;
-
-	@Override
-	public String toString() {
-		return id + "," + codePostal + "," + ville + "," + pays + "," + destinataire + "," + expediteur + "," + contenu + "\n";
-	}
 
 	public Integer getCodePostal() {
 		return codePostal;
@@ -82,6 +75,14 @@ public class Courrier {
 
 	public Long getId() {
 		return id;
+	}
+
+	public List<Adresse> getAdresses() {
+		return adresses;
+	}
+
+	public void setAdresses(List<Adresse> adresses) {
+		this.adresses = adresses;
 	}
 
 }

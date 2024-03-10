@@ -3,5 +3,6 @@
 reveal.js**
 index.html
 *.xcf
+courriers.csv
 
 **/src/test/resources/init_fat.sql

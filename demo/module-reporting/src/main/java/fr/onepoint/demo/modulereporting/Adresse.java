@@ -2,6 +2,7 @@ package fr.onepoint.demo.modulereporting;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Adresse {
@@ -17,11 +18,8 @@ public class Adresse {
 	private String ligne4;
 	private String ligne5;
 	private String ligne6;
-
-	@Override
-	public String toString() {
-		return id + "," + codePostal + "," + ville + "," + pays + "," + ligne1 + "," + ligne2 + "," + ligne3 + "," + ligne4 + "," + ligne5 + "," + ligne6 + "\n";
-	}
+	@ManyToOne
+	private Courrier courrier;
 
 	public Long getId() {
 		return id;
@@ -101,6 +99,14 @@ public class Adresse {
 
 	public void setLigne6(String ligne6) {
 		this.ligne6 = ligne6;
+	}
+
+	public Courrier getCourrier() {
+		return courrier;
+	}
+
+	public void setCourrier(Courrier courrier) {
+		this.courrier = courrier;
 	}
 
 }

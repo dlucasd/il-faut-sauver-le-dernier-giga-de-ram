@@ -31,7 +31,6 @@ public class CatchMeIfYouCan {
 		LotPostal lotPostal = lotPostalRepository.findById(1L).orElseThrow(() -> new RuntimeException("Caught me !"));
 		OrdreDeTri ordreDeTri = new OrdreDeTri(lotPostal, "\\d{5}");
 		processPlisAsList(ordreDeTri);
-		//processPlisAsStream(ordreDeTri);
 	}
 
 	private void processPlisAsList(OrdreDeTri ordreDeTri) {
@@ -42,19 +41,6 @@ public class CatchMeIfYouCan {
 		                         .collect(Collectors.joining(", "));
 		LOGGER.debug("Ligne générée : {}", ligne);
 		Optional<Courrier> courrierPourMemphis = ordreDeTri.getCourriers().stream()
-		                                              .filter(courrier -> MEMPHIS.equals(courrier.getCp()))
-		                                              .findFirst();
-		LOGGER.info("Un courrier pour Memphis {}", courrierPourMemphis.isPresent() ? "existe" : "n'existe pas");
-	}
-
-	private void processPlisAsStream(OrdreDeTri ordreDeTri) {
-		LOGGER.info("Traitement d'une liste de {} plis...", ordreDeTri.getCourriersAsParallelStream().count());
-		String ligne = ordreDeTri.getCourriersAsParallelStream()
-		                         .sorted(Comparator.comparingInt(courrier -> Integer.parseInt(courrier.getCp())))
-		                         .map(Courrier::getContenu)
-		                         .collect(Collectors.joining(", "));
-		LOGGER.debug("Ligne générée : {}", ligne);
-		Optional<Courrier> courrierPourMemphis = ordreDeTri.getCourriersAsParallelStream()
 		                                              .filter(courrier -> MEMPHIS.equals(courrier.getCp()))
 		                                              .findFirst();
 		LOGGER.info("Un courrier pour Memphis {}", courrierPourMemphis.isPresent() ? "existe" : "n'existe pas");
