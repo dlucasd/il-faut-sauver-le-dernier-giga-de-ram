@@ -2,7 +2,7 @@
 
 === Récolte de metrics avec les profilers Java Flight Recorder et Async – 5 minutes
 
-* démo : on passe le flux : ça plante
+* démo : on passe le fichier : ça plante
 * comment on analyse ça ?
 * petit cours théorique sur le profiling JFR/Async
 

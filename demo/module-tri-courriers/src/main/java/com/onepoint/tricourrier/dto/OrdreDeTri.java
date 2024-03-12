@@ -1,11 +1,10 @@
-package com.onepoint.javaperf.dto;
+package com.onepoint.tricourrier.dto;
 
-import com.onepoint.javaperf.entity.Courrier;
-import com.onepoint.javaperf.entity.LotPostal;
+import com.onepoint.tricourrier.entity.Courrier;
+import com.onepoint.tricourrier.entity.LotPostal;
 
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class OrdreDeTri {
 
@@ -22,5 +21,4 @@ public class OrdreDeTri {
 		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches())
 		                     .toList();
 	}
-
 }

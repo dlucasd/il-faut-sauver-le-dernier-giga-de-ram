@@ -6,30 +6,32 @@ image::images/plan2.png[]
 
 [.notes]
 --
-comment va-t-on s'y prendre ?
+cqu'avons-nous sous la main ?
 
 * a-t-on des *tests de perf* ? ou *env de perf* ? Non
 * est-ce qu'on a des *metrics* sur les composants ? Non
 * a-t-on accès à la prod pour voir les *logs* ? Non
 * a-t-on une *intuition* sur les composants consommateurs ? Oui, plusieurs dizaines
 
-* fake conversation teams au client : et au fait ? on a combien de temps ? 3 semaines!
-
-* ok ça va être chaud, comment s'y prendre ?
-
-* pas le temps de mettre en place des *tirs de perf* (environnement à dispo sous taillé, *process administratif lourd* pour en mettre en place)
-* pas le temps de mettre en place de l'*observabilité* (utilisation d'un ordonnanceur qui ne facilite pas la tâche, les *logs sont éparpillées*, pas de correlation id)
-
-* demander un *gros flux*
-* on set le *Xmx à 8go* sur tous les composants
-* on *extrapole* les résultats
+* et au fait ? on a combien de temps ? 3 semaines!
 --
 
 [%notitle.columns.is-vcentered]
-== Demarche
+=== Demarche
 [.column]
 _"Vous avez 3 semaines !"_
 
 [.column]
 image::images/run.png[width=100%]
 
+[.notes]
+--
+* ok ça va être chaud, comment s'y prendre ?
+
+* pas le temps de mettre en place des *tirs de perf* (environnement à dispo sous taillé, *process administratif lourd* pour en mettre en place)
+* pas le temps de mettre en place de l'*observabilité* (utilisation d'un ordonnanceur qui ne facilite pas la tâche, les *logs sont éparpillées*, pas de correlation id)
+
+* demander un *gros fichier*
+* on set le *Xmx à 8go* sur tous les composants
+* on *extrapole* les résultats
+--

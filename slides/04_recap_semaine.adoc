@@ -7,6 +7,82 @@ image::images/semaine1.png[width=80%]
 === Semaine 1
 image::images/recap_semaine.png[background, size=contain]
 
+[%notitle.columns.is-vcentered]
+=== pg_stat_statements
+
+[.column.is-one-fifth]
+image::images/terminal.png[width=50%]
+
+.pg_stat_statements
+[.column.terminal]
+****
+[source, bash, highlight=1..2|3]
+----
+- Ajout dans le fichier postgresql.conf :
+shared_preload_libraries = 'pg_stat_statements'
+- Redémarrage de PostgreSQL
+----
+
+[source, sql, highlight=1|2]
+----
+create extension pg_stat_statements;
+select pg_stat_statements_reset();
+----
+****
+
+[.notes]
+--
+* équivalent oracle : v$sqlstats
+--
+
+
+[%notitle]
+=== Projections fermées
+
+.Projections fermées
+****
+[source, java]
+----
+interface CourrierReporting {
+	String getVille();
+	String getDestinataire();
+}
+----
+****
+
+[%notitle]
+=== Projections ouvertes
+
+.Projections ouvertes
+****
+[source, java]
+----
+interface CourrierReporting {
+	String getVille();
+	String getDestinataire();
+
+	default String getFullDestinataire() {
+		return getDestinataire().concat(" ").concat(getVille());
+	}
+}
+----
+****
+
+[%notitle]
+=== Stream
+
+.Récupérer une liste de courriers
+****
+[source, java, highlight=1..2;5|1;3;5|1;4;5]
+----
+public interface CourrierRepository extends JpaRepository<Courrier, Long> {
+	Stream<Courrier> getByVille(String ville);
+	Slice<Courrier> getByVille(String ville, Pageable p);
+	Page<Courrier> getByVille(String ville, Pageable p);
+}
+----
+****
+
 [.text-is-centered]
 === Semaine 2
 image::images/semaine2.png[width=80%]
@@ -82,23 +158,6 @@ image::images/semaine3.png[width=80%]
 === Semaine 3
 image::images/recap_semaine.png[background, size=contain]
 
-[%notitle.columns.is-vcentered]
-=== pg_stat_statements
-
-[.column.is-one-fifth]
-image::images/terminal.png[width=50%]
-
-[.column.terminal]
-****
-[source, bash]
-----
-sudo vi /etc/postgresql/13/data/postgresql.conf
-shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
-sudo systemctl restart postgresql-13
-psql -U postgres -c "create extension pg_stat_statements;"
-psql -U postgres -c "select pg_stat_statements_reset()"
-----
-****
 
 === Livraison
 image::images/fin.png[width=100%]

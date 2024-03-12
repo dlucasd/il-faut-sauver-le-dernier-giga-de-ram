@@ -1,6 +1,6 @@
-package com.onepoint.javaperf;
+package com.onepoint.tricourrier;
 
-import com.onepoint.javaperf.service.CatchMeIfYouCan;
+import com.onepoint.tricourrier.service.TriCourrierService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,7 +10,7 @@ public class JavaperfApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(JavaperfApplication.class, args);
-		ctx.getBean(CatchMeIfYouCan.class).runForestRun();
+		ctx.getBean(TriCourrierService.class).runForestRun();
 	}
 
 }

@@ -1,9 +1,9 @@
-package com.onepoint.javaperf.service;
+package com.onepoint.tricourrier.service;
 
-import com.onepoint.javaperf.dto.OrdreDeTri;
-import com.onepoint.javaperf.entity.Courrier;
-import com.onepoint.javaperf.entity.LotPostal;
-import com.onepoint.javaperf.repository.LotPostalRepository;
+import com.onepoint.tricourrier.dto.OrdreDeTri;
+import com.onepoint.tricourrier.entity.Courrier;
+import com.onepoint.tricourrier.entity.LotPostal;
+import com.onepoint.tricourrier.repository.LotPostalRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -13,22 +13,18 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class CatchMeIfYouCan {
+public class TriCourrierService {
 
-	private static final String MEMPHIS = "37501";
-	private final LotPostalRepository lotPostalRepository;
-	private static final Logger LOGGER = LoggerFactory.getLogger(CatchMeIfYouCan.class);
-
-	public CatchMeIfYouCan(LotPostalRepository lotPostalRepository) {
-		this.lotPostalRepository = lotPostalRepository;
-	}
+	private static final String MEMPHIS = "29900";
+	private static final Logger LOGGER = LoggerFactory.getLogger(TriCourrierService.class);
 
 	public void runForestRun() {
 		sortByCountry();
 	}
 
 	public void sortByCountry() {
-		LotPostal lotPostal = lotPostalRepository.findById(1L).orElseThrow(() -> new RuntimeException("Caught me !"));
+		LOGGER.info("Récupération des données...");
+		LotPostal lotPostal = LotPostalRepository.findAll();
 		OrdreDeTri ordreDeTri = new OrdreDeTri(lotPostal, "\\d{5}");
 		processPlisAsList(ordreDeTri);
 	}
