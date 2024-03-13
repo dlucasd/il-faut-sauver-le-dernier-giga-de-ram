@@ -23,7 +23,7 @@ image::images/chaine_simple.png[]
 * chaque année, forte volumétrie en fin d'année, environ 4 millions de courriers
 * l'année dernière, consommation mémoire 96go atteinte
 
-* attend c'est pas normal! 96Go ?
+* Damien : attend c'est pas normal! 96Go pour ça ?
 * ok alors en fait, la chaîne est un peu plus complexe
 --
 
@@ -35,10 +35,9 @@ image::images/chaine_complexe.png[width=80%]
 
 [.notes]
 --
-* **ordonnanceur** au centre de l'appli, **progiciel** de traitement d'image, **moteurs** de tri, **portail**
-* **parallélisation** des traitements
-* le *tout déployé sur un serveur*, pas de conteneurisation, pas de scalabilité
-* problématique : cette année, un peu plus de volumétrie et le client nous confie que la **chaîne consomme de plus en plus** de RAM
+* *ordonnanceur* au centre de l'appli, *progiciel* de traitement d'image, *moteurs* de tri, *portail*
+* *parallélisation* des traitements
+* le *tout déployé sur un serveur*, pas de conteneurisation
+* problématique : cette année, un peu plus de volumétrie et le client nous confie que la *chaîne consomme de plus en plus* de RAM
 * client pas confiant pour les traitements de fin d'année
 --
-

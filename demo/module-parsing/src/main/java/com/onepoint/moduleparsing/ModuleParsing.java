@@ -10,7 +10,7 @@ public class ModuleParsing {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(ModuleParsing.class, args);
-		ctx.getBean(ParsingService.class).run();
+		ctx.getBean(ParsingService.class).runForestRun();
 	}
 
 }

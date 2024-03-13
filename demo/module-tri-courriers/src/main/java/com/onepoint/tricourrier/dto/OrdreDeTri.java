@@ -5,20 +5,22 @@ import com.onepoint.tricourrier.entity.LotPostal;
 
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class OrdreDeTri {
 
 	private final LotPostal lotPostal;
-	private final Pattern codePostalPattern;
+	private final Pattern pattern;
 
-	public OrdreDeTri(LotPostal lotPostal, String codePostalRegex) {
+	public OrdreDeTri(LotPostal lotPostal, String cpRegex) {
 		this.lotPostal = lotPostal;
-		this.codePostalPattern = Pattern.compile(codePostalRegex);
+		this.pattern = Pattern.compile(cpRegex);
 	}
 
 	public List<Courrier> getCourriers() {
 		return this.lotPostal.getCourriers().stream()
-		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches())
+		                     .filter(courrier -> pattern.matcher(courrier.getCp()).matches())
 		                     .toList();
 	}
+
 }

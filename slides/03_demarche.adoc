@@ -6,14 +6,14 @@ image::images/plan2.png[]
 
 [.notes]
 --
-cqu'avons-nous sous la main ?
+qu'avons-nous à notre diponibilités ?
 
 * a-t-on des *tests de perf* ? ou *env de perf* ? Non
 * est-ce qu'on a des *metrics* sur les composants ? Non
 * a-t-on accès à la prod pour voir les *logs* ? Non
 * a-t-on une *intuition* sur les composants consommateurs ? Oui, plusieurs dizaines
 
-* et au fait ? on a combien de temps ? 3 semaines!
+* ok, on a rien en fait! sinon, on a combien de temps ? 3 semaines!
 --
 
 [%notitle.columns.is-vcentered]
@@ -28,10 +28,11 @@ image::images/run.png[width=100%]
 --
 * ok ça va être chaud, comment s'y prendre ?
 
-* pas le temps de mettre en place des *tirs de perf* (environnement à dispo sous taillé, *process administratif lourd* pour en mettre en place)
-* pas le temps de mettre en place de l'*observabilité* (utilisation d'un ordonnanceur qui ne facilite pas la tâche, les *logs sont éparpillées*, pas de correlation id)
+* mise en place des *tirs de perf* ? Non, *process administratif lourd* pour en mettre en place
+* mise en place d'*observabilité* ? Non, ordonnanceur qui ne facilite pas la tâche, les *logs sont éparpillées*
 
-* demander un *gros fichier*
-* on set le *Xmx à 8go* sur tous les composants
+* demander un *gros fichier* au client
+* on valorise le *Xmx à 8go* sur tous les composants
+* on *analyse les composants qui tombe en erreur* car ils ont besoin de plus
 * on *extrapole* les résultats
 --

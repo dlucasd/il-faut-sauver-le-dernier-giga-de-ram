@@ -3,9 +3,81 @@
 == Semaine 1
 image::images/semaine1.png[width=80%]
 
+[.notes]
+--
+> Module Parsing données :
+
+* Dump déjà fait et analysé dans Memory Analyser car trop long (Xmx 3Go)
+* Explication heap dump (grosse volumétrie sur Métadonnée)
+* Fix sur les métadonnées, seules les 10 premières sont utiles => le programme passe avec moins de 3Go de RAM
+* Ok ça passe, mais ça a consommé combien ? on ne peut pas savoir
+* Utilisation de JFR pour mesurer la consommation mémoire
+* On lance le programme avec la commande de JFR : `-XX:StartFlightRecording=duration=200s`
+* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées
+
+NOTE: pour préparer cette démo : 1/ avoir exécuté le module avec un Xmx3g + écriture d'un heap dump dans un fichier. 2/ avoir ouvert Memory Analyser avec le heap dump de 3go car assez long (10/15min). La démo n'a pas besoin de base de données.
+--
+
 [%notitle.columns.is-vcentered]
 === Semaine 1
-image::images/recap_semaine.png[background, size=contain]
+image::images/recap_semaine1.png[background, size=contain]
+
+[%notitle.columns.is-vcentered]
+=== Dump mémoire
+.Générer un dump mémoire
+[.column]
+****
+[source, bash, highlight=1|3|5]
+----
+jmap -dump:[live],format=b,file=<file-path> <pid>
+
+jcmd <pid> GC.heap_dump <file-path>
+
+java -XX:+HeapDumpOnOutOfMemoryError #optionnel : -Xmx1g
+----
+Eclipse Memory Analyser
+****
+
+[.notes]
+--
+* jmap : utilitaire pour sortir des infos mémoire sur un programme java en cours d'exec
+* jcmd : utilitaire permettant d'envoyer des commandes à une JVM pour diagnostiquer une appli
+--
+
+[%notitle.columns.is-vcentered]
+=== JFR
+.Lancer JFR
+[.column]
+****
+[source, bash]
+----
+java -XX:StartFlightRecording=duration=200s
+----
+JDK Mission Control
+****
+
+[.text-is-centered]
+=== Semaine 2
+image::images/semaine2.png[width=80%]
+
+[.notes]
+--
+* le composant est long sur l'accès à la base de données, l'étape 1 dure longtemps
+* du coup, je viens d'installer pg_stat_statements, et je passe le show_sql=true pour voir
+* lancement en mode profiling IntelliJ
+* N+1 query => modification Courrier => pas possible => modification de la Query LEFT JOIN FETCH => ok, moins de requête mais rien à voir avec de l'optim mémoire
+* courriers.csv => quoi ? on n'utilise que deux colonnes! => projection
+* moins de données ramenées => on peut mieux faire avec un Stream dans le repo
+* tuning : @QueryHint(name = HINT_FETCH_SIZE, value = "300000")
+* ok, on check pg_stat_statements => c'est quoi cette requête sur config ?
+* pas dans le code => hypersistence-utils
+
+NOTE: pour préparer cette démo : 1/ avoir 4 000 000 de courriers dans la base de données => voir le script de génération, qui génère les INSERT. Ce fichier est prit à l'initialisation du conteneur base de données dans le docker compose
+--
+
+[%notitle.columns.is-vcentered]
+=== Semaine 2
+image::images/recap_semaine2.png[background, size=contain]
 
 [%notitle.columns.is-vcentered]
 === pg_stat_statements
@@ -68,6 +140,12 @@ interface CourrierReporting {
 ----
 ****
 
+[.notes]
+--
+* provient de Spring Data JPA, Hibernate
+* l'idée est de ne pas ramener de la donnée inutile
+--
+
 [%notitle]
 === Stream
 
@@ -83,63 +161,77 @@ public interface CourrierRepository extends JpaRepository<Courrier, Long> {
 ----
 ****
 
+[%notitle]
+=== hypersistence-utils
+
+.hypersistence-utils
+****
+[source, xml]
+----
+<dependency>
+    <groupId>io.hypersistence</groupId>
+    <artifactId>hypersistence-utils-hibernate-63</artifactId>
+    <version>3.7.3</version>
+</dependency>
+----
+****
+
+
 [.text-is-centered]
-=== Semaine 2
-image::images/semaine2.png[width=80%]
+=== Semaine 3
+image::images/semaine3.png[width=80%]
 
 [.notes]
 --
-> Parsing données :
+> Module Tri données
 
-* Phase 1 : explication heap dump avec memory analyser + demo sur les métadonnées (xmx 3Go)
+* utilisation du profiler IntelliJ car difficile d'exploiter MAT et JFR
+* exécution du programme => beaucoup de requête sur config
+* Cacheable du Stream => ça pète au second appel car le stream a déjà été consommé
+* Stream => List
+* Utilisation d'environ 8Go de RAM
+* On enlève le collector toList dans getCourriers, on retourne un Stream
+* Utilisation d'environ 4Go de RAM
 
-* Phase 2:
-* On lance le programme avec les commandes de JFR : `-XX:StartFlightRecording=duration=200s,filename=flight.jfr`
-* On lance JMC et on importe le fichier dedans -> permet d'analyser les classes les plus instanciées -> stacktrace (On voit la prédominance de `SimpleDateFormat` et du java.util.Date)
-* Optimisation du code et relance pour comparer
+NB : aucune préparation nécessaire pour cette démo. Il faut la base de données avec la table config. Les données sont générées au début du programme.
 --
 
 [%notitle.columns.is-vcentered]
-=== Semaine 2
-image::images/recap_semaine.png[background, size=contain]
+=== Semaine 3
+image::images/recap_semaine3.png[background, size=contain]
 
 [%notitle.columns.is-vcentered]
-=== Semaine 2
-.Générer un dump mémoire
-[.column]
-****
-[source, bash]
-----
-jmap -dump:[live],format=b,file=<file-path> <pid>
-
-jcmd <pid> GC.heap_dump <file-path>
-
-java -XX:+HeapDumpOnOutOfMemoryError #optionel : -Xmx1g
-----
-****
-
-[%notitle.columns.is-vcentered]
-=== Semaine 2
+=== Les listes
 [.column]
 Les listes, c'est bien...
 [.column]
 image::images/leonardo.png[size=contain]
 
 [%notitle.columns.is-vcentered]
-=== Semaine 2
+=== Les stream
 [.column]
 image::images/tom.png[size=contain]
 [.column]
 ...les stream, c'est mieux ! (enfin, parfois)
 
 [%notitle.columns.is-vcentered]
-=== Semaine 2
-.Lancer JFR
-[.column]
+=== Le cache
+
+.Ajouter un cache hibernate
 ****
-[source, bash]
+[source, java, highlight=1..3|5..12]
 ----
-java -XX:StartFlightRecording=duration=200s
+@EnableCaching
+public class MaClasseDeConfiguration {
+}
+
+@Repository
+public interface MonRepository extends JpaRepository<MonEntite, Long> {
+
+	@Cacheable("leNomDeMonCache")
+	List<MonEntite> findByParam(String param);
+
+}
 ----
 ****
 
@@ -150,14 +242,11 @@ java -XX:StartFlightRecording=duration=200s
 * À ne "consommer" qu'à bon escient !
 --
 
-[.text-is-centered]
-=== Semaine 3
-image::images/semaine3.png[width=80%]
-
-[%notitle.columns.is-vcentered]
-=== Semaine 3
-image::images/recap_semaine.png[background, size=contain]
-
-
 === Livraison
-image::images/fin.png[width=100%]
+image::images/livraison.png[width=100%]
+
+[.notes]
+--
+* client satisfait, *gros volumes sont passés*, on a gagné *2heures*
+* chaîne consomme *moins de RAM* et est *plus rapide*
+--

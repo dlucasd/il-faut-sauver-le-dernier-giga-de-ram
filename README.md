@@ -7,8 +7,7 @@
 
 2. Lancer les commandes suivantes :
 ```
-docker container run --rm -ti -u $(id -u):$(id -g) -v $(pwd):/documents asciidoctor/docker-asciidoctor:1.65 bash
-asciidoctor-revealjs slides/index.adoc
+docker container run --rm -ti -u $(id -u):$(id -g) -v $(pwd):/documents asciidoctor/docker-asciidoctor:1.65 asciidoctor-revealjs slides/index.adoc
 ```
 
 3. Ouvrir le fichier index.html généré.
@@ -32,15 +31,15 @@ A travers ce talk nous vous présentons les outils que nous avons utilisés pour
 
 La stack du projet : Java, Spring, PostgreSQL.
 
-## Plan
+## Plan (50 minutes)
 
 - Présentation du contexte projet dans lequel nous sommes intervenus – 4 minutes
-- Démarche que nous avons adoptée pour identifier les composants consommateurs – 3 minutes
+- Démarche que nous avons adoptée pour identifier les composants consommateurs – 4 minutes
 - Récolte de metrics avec les profilers Java Flight Recorder et Async – 5 minutes
-- Analyse de la consommation mémoire avec Eclipse Memory Analyzer – 7 minutes
+- Analyse de la consommation mémoire avec Eclipse Memory Analyzer – 5 minutes
+- Affichage des requêtes générées par Hibernate, utilisation de l'extension pg_statements et hypersistence-utils – 10 minutes
 - Améliorations côté Java : instanciations inutiles, abus des opérations terminales dans les Stream, constantes – 10 minutes
-- Affichage des requêtes générées par Hibernate, utilisation de l'extension pg_statements et hypersistence-utils – 7 minutes
-- Optimisation des requêtes : mise en cache, projection, stream, réécriture de requêtes afin de limiter l'empreinte mémoire – 10 minutes
+- Optimisation des requêtes : mise en cache, projection, stream, réécriture de requêtes afin de limiter l'empreinte mémoire – 8 minutes
 - Conclusion et questions – 4 minutes
 
 ## Pourquoi ce talk ?
@@ -51,4 +50,15 @@ Avec la puissance grandissante des serveurs de nos jours, la consommation mémoi
 
 Le talk sera présenté à deux. Sous forme d'un jeu de rôles, nous raconterons ce qu'on a vécu et ce qu'on a eu le temps de faire dans le temps imparti.
 
-Nous alternerons entre quelques slides et plusieurs démos des différents outils.
+Nous alternerons entre quelques slides et trois démos des différents outils.
+
+Timing à titre indicatif :
+
+- Intro : 8 min
+- Démo 1 : 8 min
+- Bilan 1 : 2 min
+- Démo 2 : 12 min
+- Bilan 2 : 4 min
+- Démo 3 : 10 min
+- Bilan 3 : 3 min
+- Conclusion : 3 min

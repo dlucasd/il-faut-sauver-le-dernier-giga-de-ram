@@ -50,4 +50,12 @@ public class Courrier {
 		return this.contenu;
 	}
 
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
 }

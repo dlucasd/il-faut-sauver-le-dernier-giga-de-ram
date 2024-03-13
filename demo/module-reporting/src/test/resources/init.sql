@@ -1,48 +1,37 @@
-CREATE TABLE adresse
+create table courrier
 (
-    id          SERIAL PRIMARY KEY,
-    code_postal INTEGER,
-    ville       VARCHAR(255),
-    pays        VARCHAR(255),
-    ligne1      VARCHAR(255),
-    ligne2      VARCHAR(255),
-    ligne3      VARCHAR(255),
-    ligne4      VARCHAR(255),
-    ligne5      VARCHAR(255),
-    ligne6      VARCHAR(255)
-);
-CREATE TABLE personne
-(
-    id     SERIAL PRIMARY KEY,
-    nom    VARCHAR(255),
-    prenom VARCHAR(255)
-);
-CREATE TABLE courrier
-(
-    id           SERIAL PRIMARY KEY,
-    code_postal  VARCHAR(100),
-    ville        VARCHAR(100),
-    pays         VARCHAR(100),
-    destinataire VARCHAR(100),
-    expediteur   VARCHAR(100),
-    contenu      TEXT,
-    adresse_id   INTEGER,
-    FOREIGN KEY (adresse_id) REFERENCES adresse (id),
-    personne_id   INTEGER,
-    FOREIGN KEY (personne_id) REFERENCES personne (id)
+    id           serial
+        primary key,
+    code_postal  varchar(100),
+    ville        varchar(100),
+    pays         varchar(100),
+    destinataire varchar(100),
+    expediteur   varchar(100),
+    contenu      text
 );
 
-create table lot_postal
+create table adresse
 (
-    id serial
-        constraint lot_postal_pk
-            primary key
+    id          serial
+        primary key,
+    code_postal integer,
+    ville       varchar(255),
+    pays        varchar(255),
+    ligne1      varchar(255),
+    ligne2      varchar(255),
+    ligne3      varchar(255),
+    ligne4      varchar(255),
+    ligne5      varchar(255),
+    ligne6      varchar(255),
+    courrier_id integer
+        constraint adresse_courrier_id_fk
+            references courrier
 );
 
-alter table courrier
-    add lot_postal integer;
-
-alter table courrier
-    add constraint courrier_lot_postal_id_fk
-        foreign key (lot_postal) references lot_postal;
-
+create table ref_postal
+(
+    code_postal integer not null
+        constraint referentiel_postal_pk
+            primary key,
+    ville       varchar
+);

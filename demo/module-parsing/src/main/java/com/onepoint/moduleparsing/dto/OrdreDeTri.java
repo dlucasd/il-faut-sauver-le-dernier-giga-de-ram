@@ -1,11 +1,10 @@
 package com.onepoint.moduleparsing.dto;
 
-import com.onepoint.moduleparsing.entity.Courrier;
-import com.onepoint.moduleparsing.entity.LotPostal;
+import com.onepoint.moduleparsing.dto.Courrier;
+import com.onepoint.moduleparsing.dto.LotPostal;
 
 import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 public class OrdreDeTri {
 
@@ -17,9 +16,9 @@ public class OrdreDeTri {
 		this.codePostalPattern = Pattern.compile(codePostalRegex);
 	}
 
-	public Stream<Courrier> getCourriersAsStream() {
+	public List<Courrier> getCourriers() {
 		return this.lotPostal.getCourriers().stream()
-		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCp()).matches());
+		                     .filter(courrier -> codePostalPattern.matcher(courrier.getCodePostal()).matches())
+		                     .toList();
 	}
-
 }

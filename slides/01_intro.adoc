@@ -6,10 +6,10 @@ image::images/ram.jpg[background, size=fill]
 [.notes]
 --
 * pourquoi ce talk ?
-* à la **conception**, on ne se soucie généralement pas de la **consommation mémoire**
-* le **coût de la RAM** a baissé, et l'ère du **cloud** et des ressources illimitées n'ont rien arrangé
-* **retour d'expérience** sur des optimisations de consommation mémoire que nous avons effectuées il y a quelques mois
-* **exemples simplifiés**, inspirés de ce que nous avons rencontré
+* lors de la *conception technique* ou lors du *dev*, on ne se soucie généralement pas de la *consommation mémoire*
+* car on ne *gère pas la mémoire en Java*, on laisse faire la JVM
+* *nos ordinateurs* ont de plus en plus de RAM
+* *retour d'expérience* sur des optimisations de consommation mémoire que nous avons effectuées il y a quelques mois
 --
 
 [%notitle.%auto-animate.columns.is-vcentered.transparency]
@@ -67,6 +67,9 @@ image::images/ibethus.png[]
 
 [.notes]
 --
-* on pose le décor
-* bienvenue dans l'équipe Damien!
+* *3 démos* :
+** *présentation des outils* sur des *exemples très simples*
+** 2 autres *démos sur de l'optimisation* de consommation mémoire
+* Ivan : *bienvenu* dans l'équipe Damien!
+* Damien : merci! dis-moi, vous faites quoi sur votre projet ?
 --

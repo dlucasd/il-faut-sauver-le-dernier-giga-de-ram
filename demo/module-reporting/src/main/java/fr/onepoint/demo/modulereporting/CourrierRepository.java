@@ -1,5 +1,6 @@
 package fr.onepoint.demo.modulereporting;
 
+import fr.onepoint.demo.model.Courrier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

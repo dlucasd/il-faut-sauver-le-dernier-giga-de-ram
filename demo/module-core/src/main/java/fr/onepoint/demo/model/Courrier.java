@@ -1,4 +1,4 @@
-package fr.onepoint.demo.modulereporting;
+package fr.onepoint.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

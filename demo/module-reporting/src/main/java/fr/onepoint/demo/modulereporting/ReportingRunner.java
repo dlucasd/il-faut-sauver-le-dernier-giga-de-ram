@@ -1,5 +1,6 @@
 package fr.onepoint.demo.modulereporting;
 
+import fr.onepoint.demo.model.Courrier;
 import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;
@@ -16,7 +17,6 @@ public class ReportingRunner {
 	}
 
 	public void runForestRun() {
-
 		System.out.println("ETAPE 1 - Récupération des données en bases de données...");
 		List<Courrier> courriers = courrierRepository.getByVille("Philadelphie");
 

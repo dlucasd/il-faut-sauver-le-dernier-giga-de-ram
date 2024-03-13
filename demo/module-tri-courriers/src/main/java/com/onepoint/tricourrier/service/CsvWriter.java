@@ -1,9 +1,9 @@
-package com.onepoint.moduleparsing.service;
+package com.onepoint.tricourrier.service;
 
-import com.onepoint.moduleparsing.dto.Courrier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class CsvWriter {
@@ -13,8 +13,8 @@ public class CsvWriter {
 	private CsvWriter() {
 	}
 
-	public static void save(List<Courrier> courriers) {
-		LOGGER.info("Fichier csv créé : courriers_{}.csv", courriers.size());
+	public static void save(List<String> ligne) {
+		LOGGER.info("Fichier csv créé : courriers_{}.csv", LocalDate.now());
 	}
 
 }

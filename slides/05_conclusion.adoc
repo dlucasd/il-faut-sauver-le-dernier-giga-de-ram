@@ -4,11 +4,10 @@ image::images/forrest_end.png[width=80%]
 
 [.notes]
 --
-* client satisfait
-* chaîne consomme *moins de RAM* et est *plus rapide*
 * plein de choses à faire encore
 * *observabilité*, *metrics*, *logs*
 * *test de perf* automatisés pour anticiper
+* ne pas hésiter à utiliser le profiling intégré dans IntelliJ
 --
 
 [%notitle.columns.is-vcentered]

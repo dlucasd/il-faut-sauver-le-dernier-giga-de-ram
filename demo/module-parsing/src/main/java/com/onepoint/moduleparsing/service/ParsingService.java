@@ -1,29 +1,26 @@
 package com.onepoint.moduleparsing.service;
 
-import com.onepoint.moduleparsing.entity.LotPostal;
+import com.onepoint.moduleparsing.dto.Courrier;
+import com.onepoint.moduleparsing.repository.CourrierRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class ParsingService {
 
 	private static final int MAX_METADATA = 300;
-	private final ParsingCourriers parsingCourriers;
 	private static final Logger LOGGER = LoggerFactory.getLogger(ParsingService.class);
 
-	public ParsingService(ParsingCourriers parsingCourriers) {
-		this.parsingCourriers = parsingCourriers;
-	}
-
-	public void run() {
-		LotPostal lotPostal = parsingCourriers.parseLotPostal();
+	public void runForestRun() {
+		List<Courrier> courriers = CourrierRepository.findAll();
 		LOGGER.info("Début du parsing des métadonnées");
-		lotPostal.getCourriers().forEach(c -> ParsingMetadata.parseMetadata(c, MAX_METADATA));
-		lotPostal.getCourriers().forEach(DateUpdateService::update);
-		CsvWriter.save(lotPostal);
+		courriers.forEach(c -> MetadataService.getMetadata(c, MAX_METADATA));
+		courriers.forEach(DateUpdateService::update);
+		CsvWriter.save(courriers);
 		LOGGER.info("Traitement terminé le : {}", LocalDate.now());
 	}
 
