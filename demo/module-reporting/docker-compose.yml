@@ -3,8 +3,9 @@ version: '3.9'
 services:
   postgres:
     image: postgres:16.2
+    container_name: soldat_ram_bdd
     ports:
-      - "5432:5432"
+      - "55666:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./src/test/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
