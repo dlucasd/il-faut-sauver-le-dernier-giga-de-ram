@@ -217,7 +217,7 @@ image::images/tom.png[size=contain]
 [%notitle.columns.is-vcentered]
 === Le cache
 
-.Ajouter un cache hibernate
+.Ajouter un cache
 ****
 [source, java, highlight=1..3|5..12]
 ----

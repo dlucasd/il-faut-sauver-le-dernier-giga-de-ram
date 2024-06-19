@@ -14,7 +14,20 @@ image::images/forrest_end.png[width=80%]
 === Merci
 
 [.column]
+image::images/qr-code-feedback.svg[width=60%]
+
+[.column]
+****
 image::images/thanks.png[width=50%]
 
-[.column.has-text-left]
 T.HANKS
+****
+
+[.column]
+image::images/qr-code-github.svg[width=60%]
+
+
+[.notes]
+--
+* https://q-r-code.fr/
+--

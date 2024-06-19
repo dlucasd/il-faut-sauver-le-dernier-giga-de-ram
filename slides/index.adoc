@@ -12,6 +12,7 @@
 :title-slide-filter: blur(4px)
 :customcss: css/meetup.css
 
+// main color voxxed days : #58C4F1
 
 include::01_intro.adoc[]
 include::02_contexte_projet.adoc[]

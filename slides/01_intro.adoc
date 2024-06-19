@@ -30,8 +30,12 @@ Tech Lead
 Architecte
 --
 
+image:images/onepoint.png[width=200]
+
 [.vertical-align-middle]
-icon:github[] @dlucasd
+icon:github[] dlucasd
+
+icon:twitter[] dlucasd_
 
 ****
 
@@ -55,9 +59,10 @@ image::images/sod2024_2.jpg[background, size=fill]
 Tech Lead
 --
 
+image:images/onepoint.png[width=200]
 
 [.vertical-align-middle]
-icon:github[] @ibethus
+icon:github[] ibethus
 ****
 
 [.column]
