@@ -7,7 +7,6 @@ image::images/forrest_end.png[width=80%]
 * plein de choses à faire encore
 * *observabilité*, *metrics*, *logs*
 * *test de perf* automatisés pour anticiper
-* ne pas hésiter à utiliser le profiling intégré dans IntelliJ
 --
 
 [%notitle.columns.is-vcentered]

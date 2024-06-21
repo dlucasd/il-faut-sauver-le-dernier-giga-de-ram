@@ -155,8 +155,8 @@ interface CourrierReporting {
 ----
 public interface CourrierRepository extends JpaRepository<Courrier, Long> {
 	Stream<Courrier> getByVille(String ville);
-	Slice<Courrier> getByVille(String ville, Pageable p);
 	Page<Courrier> getByVille(String ville, Pageable p);
+	Slice<Courrier> getByVille(String ville, Pageable p);
 }
 ----
 ****
@@ -213,6 +213,12 @@ image::images/leonardo.png[size=contain]
 image::images/tom.png[size=contain]
 [.column]
 ...les stream, c'est mieux ! (enfin, parfois)
+
+
+[.notes]
+--
+* utiliser le profiling intégré dans IntelliJ !
+--
 
 [%notitle.columns.is-vcentered]
 === Le cache

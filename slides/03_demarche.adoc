@@ -32,7 +32,7 @@ image::images/run.png[width=100%]
 * mise en place d'*observabilité* ? Non, ordonnanceur qui ne facilite pas la tâche, les *logs sont éparpillées*
 
 * demander un *gros fichier* au client
-* on valorise le *Xmx à 8go* sur tous les composants
+* on valorise le *Xmx à 3go* sur tous les composants
 * on *analyse les composants qui tombe en erreur* car ils ont besoin de plus
 * on *extrapole* les résultats
 --

@@ -6,9 +6,11 @@ image::images/ram.jpg[background, size=fill]
 [.notes]
 --
 * pourquoi ce talk ?
+* venant du monde Java
 * lors de la *conception technique* ou lors du *dev*, on ne se soucie généralement pas de la *consommation mémoire*
-* car on ne *gère pas la mémoire en Java*, on laisse faire la JVM
-* *nos ordinateurs* ont de plus en plus de RAM
+* on laisse faire la JVM et le GC
+* de plus, *nos ordinateurs* ont de plus en plus de RAM
+* et quand un problème arrive, on ne sait pas forcément comment s'y prendre
 * *retour d'expérience* sur des optimisations de consommation mémoire que nous avons effectuées il y a quelques mois
 --
 
