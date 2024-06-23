@@ -39,7 +39,7 @@
 }
 
 body::after {
-    content: url("../images/voxxed_days_lux.png");
+    content: url("../images/breizh-camp-logo.svg");
     position: fixed;
     left: -300px;
     bottom: -80px;
@@ -57,11 +57,11 @@ body::after {
 
 .reveal .progress {
     height: 9px;
-    color: #58C4F1;
+    color: #8E3089;
 }
 
 .reveal .controls {
-    color: #58C4F1;
+    color: #8E3089;
 }
 
 img {
