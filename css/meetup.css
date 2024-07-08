@@ -39,11 +39,11 @@
 }
 
 body::after {
-    content: url("../images/breizh-camp-logo.svg");
+    content: url("../images/logo_event.svg");
     position: fixed;
-    left: -300px;
-    bottom: -80px;
-    transform: scale(0.3);
+    left: -120px;
+    bottom: -20px;
+    transform: scale(0.5);
 }
 
 .title > .slide-background-content {
@@ -57,11 +57,11 @@ body::after {
 
 .reveal .progress {
     height: 9px;
-    color: #8E3089;
+    color: #1bc1e4;
 }
 
 .reveal .controls {
-    color: #8E3089;
+    color: #1bc1e4;
 }
 
 img {
