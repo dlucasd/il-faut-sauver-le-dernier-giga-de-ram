@@ -62,3 +62,8 @@ Timing à titre indicatif :
 - Démo 3 : 10 min
 - Bilan 3 : 3 min
 - Conclusion : 3 min
+
+## Archives
+
+- Slides VoxxedDays Luxembourg 2024 : https://dlucasd.github.io/il-faut-sauver-le-dernier-giga-de-ram/voxxed-days-lux/
+- Slides BreizhCamp 2024 : https://dlucasd.github.io/il-faut-sauver-le-dernier-giga-de-ram/breizh-camp/
