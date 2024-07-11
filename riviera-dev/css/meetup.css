@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand");
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/titilliumweb/v15/NaPecZTIAOhVxoMyOr9n_E7fdM3mDaZRbryhsA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/titilliumweb/v15/NaPecZTIAOhVxoMyOr9n_E7fdMPmDaZRbrw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Titillium Bold';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/titilliumweb/v15/NaPDcZTIAOhVxoMyOr9n_E7ffEDBGIVzY5abuWIGxA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Titillium Bold';
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/titilliumweb/v15/NaPDcZTIAOhVxoMyOr9n_E7ffEDBGItzY5abuWI.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+    --r-background-color: #e7e7e7;
+    --r-main-color: #012d3f;
+    --r-main-font: 'Titillium Web';
+}
+
+body::after {
+    content: url("../images/logo_event.svg");
+    position: fixed;
+    left: -120px;
+    bottom: -20px;
+    transform: scale(0.5);
+}
+
+.title > .slide-background-content {
+    filter: blur(2px) brightness(120%);
+    opacity: 0.8;
+}
+
+.transparency.slide-background.present {
+    opacity: 0.20;
+}
+
+.reveal .progress {
+    height: 9px;
+    color: #1bc1e4;
+}
+
+.reveal .controls {
+    color: #1bc1e4;
+}
+
+img {
+    border-radius: 35px;
+}
+
+.sidebarblock.column.terminal {
+    width: 95%;
+    margin: -50px;
+}
+
