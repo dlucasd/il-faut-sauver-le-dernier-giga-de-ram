@@ -39,11 +39,11 @@
 }
 
 body::after {
-    content: url("../images/logo_event.svg");
+    content: url("../images/logo_event.png");
     position: fixed;
-    left: -120px;
-    bottom: -20px;
-    transform: scale(0.5);
+    left: -350px;
+    bottom: -50px;
+    transform: scale(0.25);
 }
 
 .title > .slide-background-content {
@@ -55,13 +55,28 @@ body::after {
     opacity: 0.20;
 }
 
-.reveal .progress {
-    height: 9px;
-    color: #1bc1e4;
+.reveal .progress span{
+    background-image: linear-gradient(90deg, rgba(52,109,240,1) 0%, rgba(226,43,41,1) 25%, rgba(23,143,71,1) 50%, rgba(248,176,12,1) 100%);
 }
 
-.reveal .controls {
-    color: #1bc1e4;
+.reveal .progress {
+    height: 10px;
+}
+
+.reveal .controls .navigate-left {
+    color: rgba(52,109,240,1);
+}
+
+.reveal .controls .navigate-up {
+    color: rgba(226,43,41,1);
+}
+
+.reveal .controls .navigate-down {
+    color: rgba(23,143,71,1);
+}
+
+.reveal .controls .navigate-right {
+    color: rgba(248,176,12,1);
 }
 
 img {
@@ -73,3 +88,9 @@ img {
     margin: -50px;
 }
 
+.game {
+    position: absolute;
+    right: -150px;
+    bottom: 450px;
+    transform: rotate(45deg);
+}
