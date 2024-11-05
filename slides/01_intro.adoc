@@ -72,6 +72,11 @@ icon:github[] ibethus
 image::images/ibethus.png[]
 --
 
+[.game]
+--
+image::images/sauver_giga_ram.svg[]
+--
+
 [.notes]
 --
 * *3 démos* :
